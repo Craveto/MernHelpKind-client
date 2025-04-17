@@ -1,0 +1,116 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    height: 13%;
+    border-bottom: 1.5px solid #c9bede;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f46e5;
+  }
+  
+  .nav-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .nav-input {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    width: 150px;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+  
+  .nav-input:focus {
+    border-color: #4f46e5;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .user-btn {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  .admin-btn {
+    background-color: #6366f1;
+    color: white;
+  }
+  
+  .user-btn:hover,
+  .admin-btn:hover {
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 600px) {
+    .nav-right {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-input {
+      width: 100%;
+    }
+    .navbar{
+      height: 6%;
+    }
+  }
+  
+
+  .hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+  
+    .nav-right.open {
+      display: flex;
+    }
+  
+    .nav-input {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  
+    .nav-btn {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+  
