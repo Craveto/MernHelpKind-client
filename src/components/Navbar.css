@@ -54,13 +54,13 @@
     color: white;
   }
   
-  .admin-btn {
+  .login-btn {
     background-color: #6366f1;
     color: white;
   }
   
   .user-btn:hover,
-  .admin-btn:hover {
+  .login-btn:hover {
     opacity: 0.9;
   }
   
@@ -94,7 +94,7 @@
       display: none;
       flex-direction: column;
       width: 100%;
-      padding: 10px;
+      padding: 31px;
       background-color: #fff;
       border-top: 1px solid #ccc;
     }
@@ -104,13 +104,22 @@
     }
   
     .nav-input {
-      width: 100%;
+      width: 90%;
+      margin: 2px auto;
       margin-bottom: 8px;
-    }
+  }
   
     .nav-btn {
       width: 100%;
       margin-bottom: 8px;
     }
+
+    .user-welcome {
+      color: #333;
+      font-weight: 500;
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+    
   }
   

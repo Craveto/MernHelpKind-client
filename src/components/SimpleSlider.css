@@ -1,0 +1,137 @@
+/* Base Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+  }
+  
+  .slide {
+    min-width: 100%;
+    position: relative;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+  
+  .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .slide-caption h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .slide-caption p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* Navigation Arrows */
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .slider-arrow:hover {
+    background: white;
+  }
+  
+  .slider-arrow.prev {
+    left: 15px;
+  }
+  
+  .slider-arrow.next {
+    right: 15px;
+  }
+  
+  /* Dots Indicator */
+  .slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .slider-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+    
+    .slide-caption {
+      padding: 0.75rem;
+    }
+    
+    .slide-caption h3 {
+      font-size: 1.2rem;
+    }
+    
+    .slide-caption p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slider-arrow {
+      display: none; /* Hide arrows on small devices */
+    }
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+    }
+  }

@@ -1,0 +1,44 @@
+.volunteer-section {
+    text-align: center;
+    background-color: #dce1eb;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 30px auto;
+    width: 75%;
+  }
+  
+  .volunteer-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .volunteer-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d35400;
+    margin: 10px 0;
+  }
+  
+  .volunteer-text {
+    font-size: 18px;
+    color: #2c3e50;
+    margin: 20px 0;
+  }
+  
+  .volunteer-btn {
+    background-color: #444;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .volunteer-btn:hover {
+    background-color: #222;
+  }
+  
