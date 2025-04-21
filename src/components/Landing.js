@@ -10,6 +10,7 @@ import AdminDashboard from "./AdminDashboard";
 import Volunteers from "./Volunteers";
 import FeaturesSlider from "./FeaturesSlider";
 import ReviewSection from "./ReviewSection";
+import Footer from "./Footer";
 
 const Landing = () => {
 
@@ -74,6 +75,7 @@ const Landing = () => {
           <Volunteers />
           <FeaturesSlider />
           <ReviewSection />
+          <Footer />
 
         </>
       )}
