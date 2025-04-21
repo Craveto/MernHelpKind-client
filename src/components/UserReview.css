@@ -1,5 +1,5 @@
 .user-review {
-    max-width: 700px;
+    max-width: 75%;
     margin: 40px auto;
     padding: 30px;
     background: linear-gradient(to right, #e0f7fa, #ffffff);
@@ -66,7 +66,7 @@
 }
 
 .give-review-btn {
-    margin-top: 10px;
+    margin: 15px 0;
 }
 
 .review-list {

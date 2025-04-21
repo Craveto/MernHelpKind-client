@@ -4,6 +4,10 @@ import "./Navbar.css";
 const Navbar = ({ onSignupOpen, onLoginOpen,user, onLogout  }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  if (user && user.role === "admin") {
+    return null;
+  }
+
   return (
     <div className="navbar">
       <div className="logo">HelpKind</div>
@@ -22,7 +26,7 @@ const Navbar = ({ onSignupOpen, onLoginOpen,user, onLogout  }) => {
         ) : (
           <>
             <button className="nav-btn user-btn" onClick={onSignupOpen}>Signup</button>
-            <button className="nav-btn login-btn" onClick={onLoginOpen}>Login</button>
+            <button className="nav-btn user-btn login-btn" onClick={onLoginOpen}>Login</button>
           </>
         )}
       </div>

@@ -20,9 +20,14 @@ const LoginModal = ({ onClose, onLoginSuccess }) => {
       const res = await axios.post("http://localhost:5000/api/auth/login", formData);
       const { user, token } = res.data;
 
-      // Optional: Store token in localStorage
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+      if (user.role === "admin") {
+        localStorage.setItem("adminToken", token);
+        localStorage.setItem("adminName", user.name);
+      } else {
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
+      }
+      
 
       // Pass user info to parent
       onLoginSuccess(user);

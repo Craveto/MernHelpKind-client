@@ -1,0 +1,36 @@
+.admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .menu-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .admin-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-name {
+    margin-right: 15px;
+    font-weight: bold;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
