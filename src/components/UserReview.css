@@ -2,7 +2,8 @@
     max-width: 75%;
     margin: 40px auto;
     padding: 30px;
-    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    /* background: linear-gradient(to right, #e0f7fa, #ffffff); */
+    background: #dce1eb;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     text-align: center;

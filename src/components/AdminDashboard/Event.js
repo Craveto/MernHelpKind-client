@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Event.css";
 
 const Event = () => {
@@ -11,20 +12,66 @@ const Event = () => {
     status: "active",
   });
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+
+  // Fetch events from backend
+  const fetchEvents = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/events");
+      setEvents(res.data);
+    } catch (err) {
+      console.error("Error fetching events:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
   const handleChange = (e) => {
     setNewEvent({ ...newEvent, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEvents([...events, { ...newEvent, id: Date.now() }]);
-    setNewEvent({
-      name: "",
-      date: "",
-      location: "",
-      description: "",
-      status: "active",
-    });
+
+    try {
+      if (isEditing) {
+        await axios.put(`http://localhost:5000/api/events/${editingId}`, newEvent);
+      } else {
+        await axios.post("http://localhost:5000/api/events", newEvent);
+      }
+
+      setNewEvent({
+        name: "",
+        date: "",
+        location: "",
+        description: "",
+        status: "active",
+      });
+
+      setIsEditing(false);
+      setEditingId(null);
+      fetchEvents();
+    } catch (err) {
+      console.error("Error submitting event:", err);
+    }
+  };
+
+  const handleEdit = (event) => {
+    setNewEvent(event);
+    setIsEditing(true);
+    setEditingId(event._id);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/events/${id}`);
+      fetchEvents();
+    } catch (err) {
+      console.error("Error deleting event:", err);
+    }
   };
 
   return (
@@ -66,7 +113,7 @@ const Event = () => {
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
         </select>
-        <button type="submit">Add Event</button>
+        <button type="submit">{isEditing ? "Update Event" : "Add Event"}</button>
       </form>
 
       <div className="event-list">
@@ -80,15 +127,20 @@ const Event = () => {
                 <th>Date & Time</th>
                 <th>Location</th>
                 <th>Status</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {events.map((event) => (
-                <tr key={event.id}>
+                <tr key={event._id}>
                   <td>{event.name}</td>
-                  <td>{event.date}</td>
+                  <td>{new Date(event.date).toLocaleString()}</td>
                   <td>{event.location}</td>
                   <td>{event.status}</td>
+                  <td>
+                    <button className="edit-btn" onClick={() => handleEdit(event)}>Edit</button>
+                    <button className="delete-btn" onClick={() => handleDelete(event._id)}>Delete</button>
+                  </td>
                 </tr>
               ))}
             </tbody>

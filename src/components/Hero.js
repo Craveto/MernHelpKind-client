@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="org-logos">
           {organizations.map((org, i) => (
             <div className="org-card" key={i}>
-              <img src={`/logos/org-${i + 1}.png`} alt={org} />
+              <img src={`/images/org-${i + 1}.png`} alt={org} />
             </div>
           ))}
         </div>
