@@ -3,6 +3,7 @@ import axios from "axios";
 import Hero from "./Hero";
 import UserReview from "./UserReview" ;
 import UserEvent from "./UserEvent";
+import Footer from "./Footer";
 
 const UserDashboard = ({ user }) => {
 
@@ -28,6 +29,7 @@ const UserDashboard = ({ user }) => {
       <Hero />
       <UserEvent events={events} />
       <UserReview />
+      <Footer />
     </div>
   );
 };
