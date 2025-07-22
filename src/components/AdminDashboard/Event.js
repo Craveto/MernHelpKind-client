@@ -18,7 +18,7 @@ const Event = () => {
   // Fetch events from backend
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/events");
+      const res = await axios.get("https://mernhelpkind-server.onrender.com/api/events");
       setEvents(res.data);
     } catch (err) {
       console.error("Error fetching events:", err);
@@ -38,9 +38,9 @@ const Event = () => {
 
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/events/${editingId}`, newEvent);
+        await axios.put(`https://mernhelpkind-server.onrender.com/api/events/${editingId}`, newEvent);
       } else {
-        await axios.post("http://localhost:5000/api/events", newEvent);
+        await axios.post("https://mernhelpkind-server.onrender.com/api/events", newEvent);
       }
 
       setNewEvent({

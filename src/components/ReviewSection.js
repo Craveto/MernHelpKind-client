@@ -6,7 +6,7 @@ const ReviewSection = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/reviews")
+    axios.get("https://mernhelpkind-server.onrender.com/api/reviews")
       .then(res => setReviews(res.data))
       .catch(err => console.error("Fetch error", err));
   }, []);

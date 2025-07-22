@@ -39,7 +39,7 @@ const UserReview = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/reviews",
+        "https://mernhelpkind-server.onrender.com/api/reviews",
         { reviewText, name: user.name },
         {
           headers: {

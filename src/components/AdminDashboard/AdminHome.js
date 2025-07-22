@@ -13,7 +13,7 @@ const AdminHome = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/stats", {
+        const res = await axios.get("https://mernhelpkind-server.onrender.com/api/admin/stats", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
